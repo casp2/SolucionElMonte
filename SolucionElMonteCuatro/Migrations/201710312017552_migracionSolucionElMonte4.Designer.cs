@@ -13,7 +13,7 @@ namespace SolucionElMonteCuatro.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201710311927092_migracionSolucionElMonte4"; }
+            get { return "201710312017552_migracionSolucionElMonte4"; }
         }
         
         string IMigrationMetadata.Source

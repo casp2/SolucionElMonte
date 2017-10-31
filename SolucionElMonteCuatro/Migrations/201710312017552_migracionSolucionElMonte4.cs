@@ -8,7 +8,7 @@ namespace SolucionElMonteCuatro.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.CondenaDelitos",
+                "dbo.CondenaDelitoes",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -18,7 +18,7 @@ namespace SolucionElMonteCuatro.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Condenas", t => t.CondenaId_Id)
-                .ForeignKey("dbo.Delitos", t => t.DelitoId_Id)
+                .ForeignKey("dbo.Delitoes", t => t.DelitoId_Id)
                 .Index(t => t.CondenaId_Id)
                 .Index(t => t.DelitoId_Id);
             
@@ -33,13 +33,13 @@ namespace SolucionElMonteCuatro.Migrations
                         PresoID_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Jueces", t => t.JuezId_Id)
-                .ForeignKey("dbo.Presos", t => t.PresoID_Id)
+                .ForeignKey("dbo.Juezs", t => t.JuezId_Id)
+                .ForeignKey("dbo.Presoes", t => t.PresoID_Id)
                 .Index(t => t.JuezId_Id)
                 .Index(t => t.PresoID_Id);
             
             CreateTable(
-                "dbo.Jueces",
+                "dbo.Juezs",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -50,7 +50,7 @@ namespace SolucionElMonteCuatro.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Presos",
+                "dbo.Presoes",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -63,7 +63,7 @@ namespace SolucionElMonteCuatro.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Delitos",
+                "dbo.Delitoes",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -77,19 +77,19 @@ namespace SolucionElMonteCuatro.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.CondenaDelitos", "DelitoId_Id", "dbo.Delitos");
-            DropForeignKey("dbo.CondenaDelitos", "CondenaId_Id", "dbo.Condenas");
-            DropForeignKey("dbo.Condenas", "PresoID_Id", "dbo.Presos");
-            DropForeignKey("dbo.Condenas", "JuezId_Id", "dbo.Jueces");
+            DropForeignKey("dbo.CondenaDelitoes", "DelitoId_Id", "dbo.Delitoes");
+            DropForeignKey("dbo.CondenaDelitoes", "CondenaId_Id", "dbo.Condenas");
+            DropForeignKey("dbo.Condenas", "PresoID_Id", "dbo.Presoes");
+            DropForeignKey("dbo.Condenas", "JuezId_Id", "dbo.Juezs");
             DropIndex("dbo.Condenas", new[] { "PresoID_Id" });
             DropIndex("dbo.Condenas", new[] { "JuezId_Id" });
-            DropIndex("dbo.CondenaDelitos", new[] { "DelitoId_Id" });
-            DropIndex("dbo.CondenaDelitos", new[] { "CondenaId_Id" });
-            DropTable("dbo.Delitos");
-            DropTable("dbo.Presos");
-            DropTable("dbo.Jueces");
+            DropIndex("dbo.CondenaDelitoes", new[] { "DelitoId_Id" });
+            DropIndex("dbo.CondenaDelitoes", new[] { "CondenaId_Id" });
+            DropTable("dbo.Delitoes");
+            DropTable("dbo.Presoes");
+            DropTable("dbo.Juezs");
             DropTable("dbo.Condenas");
-            DropTable("dbo.CondenaDelitos");
+            DropTable("dbo.CondenaDelitoes");
         }
     }
 }
