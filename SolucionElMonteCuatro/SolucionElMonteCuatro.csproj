@@ -99,12 +99,13 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DelitoController.cs" />
+    <Compile Include="Controllers\JuezController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710312017552_migracionSolucionElMonte4.cs" />
-    <Compile Include="Migrations\201710312017552_migracionSolucionElMonte4.Designer.cs">
-      <DependentUpon>201710312017552_migracionSolucionElMonte4.cs</DependentUpon>
+    <Compile Include="Migrations\201710312315424_MigracionElMonte4.cs" />
+    <Compile Include="Migrations\201710312315424_MigracionElMonte4.Designer.cs">
+      <DependentUpon>201710312315424_MigracionElMonte4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Condena.cs" />
@@ -128,8 +129,8 @@
     <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710312017552_migracionSolucionElMonte4.resx">
-      <DependentUpon>201710312017552_migracionSolucionElMonte4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710312315424_MigracionElMonte4.resx">
+      <DependentUpon>201710312315424_MigracionElMonte4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

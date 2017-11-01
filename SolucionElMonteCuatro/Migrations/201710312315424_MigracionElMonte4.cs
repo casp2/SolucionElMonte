@@ -3,7 +3,7 @@ namespace SolucionElMonteCuatro.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migracionSolucionElMonte4 : DbMigration
+    public partial class MigracionElMonte4 : DbMigration
     {
         public override void Up()
         {
@@ -45,6 +45,7 @@ namespace SolucionElMonteCuatro.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Nombre = c.String(),
                         Rut = c.String(),
+                        Sexo = c.Int(nullable: false),
                         Domicilio = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
@@ -59,6 +60,7 @@ namespace SolucionElMonteCuatro.Migrations
                         Apellido = c.String(),
                         FechaNacimiento = c.DateTime(nullable: false),
                         Domicilio = c.String(),
+                        Sexo = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
