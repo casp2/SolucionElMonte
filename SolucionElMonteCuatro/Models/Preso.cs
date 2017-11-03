@@ -14,5 +14,9 @@ namespace SolucionElMonteCuatro.Models
         public DateTime FechaNacimiento { get; set; }
         public string Domicilio { get; set; }
         public int Sexo { get; set; }
+        public List<Condena> Condenas { get; set; }
+        
+        
+        
     }
 }

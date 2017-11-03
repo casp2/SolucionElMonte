@@ -10,8 +10,23 @@ namespace SolucionElMonteCuatro.Models
         public int Id { get; set; }
         public DateTime FechaInicioCondena { get; set; }
         public DateTime FechaCondena { get; set; }
-        public Preso PresoID { get; set; }
-        public Juez JuezId { get; set; }
+        public int? PresoID { get; set; }
+        public Preso Presos { get; set; }
+        public int? JuezId { get; set; }
+        public Juez Jueces { get; set; }
+        public List<CondenaDelito> CondenaDelitos { get; set; }
+
+        public int num { get; set; }
+
+        
+
+        
+
+
+
+
+
+
 
     }
 }

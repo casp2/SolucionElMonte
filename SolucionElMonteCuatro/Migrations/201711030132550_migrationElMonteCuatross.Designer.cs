@@ -7,13 +7,13 @@ namespace SolucionElMonteCuatro.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class MigracionElMonte4 : IMigrationMetadata
+    public sealed partial class migrationElMonteCuatross : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MigracionElMonte4));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migrationElMonteCuatross));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710312315424_MigracionElMonte4"; }
+            get { return "201711030132550_migrationElMonteCuatross"; }
         }
         
         string IMigrationMetadata.Source

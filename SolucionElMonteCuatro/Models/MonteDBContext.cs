@@ -15,6 +15,8 @@ namespace SolucionElMonteCuatro.Models
         public DbSet<Delito> Delitos { get; set; }
         public DbSet<CondenaDelito> CondenaDelitos { get; set; }
 
+        
+
 
 
 

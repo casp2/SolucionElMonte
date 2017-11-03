@@ -11,6 +11,8 @@ namespace SolucionElMonteCuatro.Models
         public string Nombre { get; set; }
         public int CondenaMinima { get; set; }
         public int CondenaMaxima { get; set; }
+        public List<CondenaDelito> CondenaDelitos { get; set; }
+        
 
     }
 }

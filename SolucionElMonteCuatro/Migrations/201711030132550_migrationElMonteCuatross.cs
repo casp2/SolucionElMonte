@@ -3,7 +3,7 @@ namespace SolucionElMonteCuatro.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class MigracionElMonte4 : DbMigration
+    public partial class migrationElMonteCuatross : DbMigration
     {
         public override void Up()
         {
@@ -12,15 +12,15 @@ namespace SolucionElMonteCuatro.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        CondenaID = c.Int(nullable: false),
+                        DelitoID = c.Int(),
                         Condena = c.Int(nullable: false),
-                        CondenaId_Id = c.Int(),
-                        DelitoId_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Condenas", t => t.CondenaId_Id)
-                .ForeignKey("dbo.Delitoes", t => t.DelitoId_Id)
-                .Index(t => t.CondenaId_Id)
-                .Index(t => t.DelitoId_Id);
+                .ForeignKey("dbo.Condenas", t => t.CondenaID, cascadeDelete: true)
+                .ForeignKey("dbo.Delitoes", t => t.DelitoID)
+                .Index(t => t.CondenaID)
+                .Index(t => t.DelitoID);
             
             CreateTable(
                 "dbo.Condenas",
@@ -29,14 +29,14 @@ namespace SolucionElMonteCuatro.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         FechaInicioCondena = c.DateTime(nullable: false),
                         FechaCondena = c.DateTime(nullable: false),
-                        JuezId_Id = c.Int(),
-                        PresoID_Id = c.Int(),
+                        PresoID = c.Int(),
+                        JuezId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Juezs", t => t.JuezId_Id)
-                .ForeignKey("dbo.Presoes", t => t.PresoID_Id)
-                .Index(t => t.JuezId_Id)
-                .Index(t => t.PresoID_Id);
+                .ForeignKey("dbo.Juezs", t => t.JuezId)
+                .ForeignKey("dbo.Presoes", t => t.PresoID)
+                .Index(t => t.PresoID)
+                .Index(t => t.JuezId);
             
             CreateTable(
                 "dbo.Juezs",
@@ -79,14 +79,14 @@ namespace SolucionElMonteCuatro.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.CondenaDelitoes", "DelitoId_Id", "dbo.Delitoes");
-            DropForeignKey("dbo.CondenaDelitoes", "CondenaId_Id", "dbo.Condenas");
-            DropForeignKey("dbo.Condenas", "PresoID_Id", "dbo.Presoes");
-            DropForeignKey("dbo.Condenas", "JuezId_Id", "dbo.Juezs");
-            DropIndex("dbo.Condenas", new[] { "PresoID_Id" });
-            DropIndex("dbo.Condenas", new[] { "JuezId_Id" });
-            DropIndex("dbo.CondenaDelitoes", new[] { "DelitoId_Id" });
-            DropIndex("dbo.CondenaDelitoes", new[] { "CondenaId_Id" });
+            DropForeignKey("dbo.CondenaDelitoes", "DelitoID", "dbo.Delitoes");
+            DropForeignKey("dbo.Condenas", "PresoID", "dbo.Presoes");
+            DropForeignKey("dbo.Condenas", "JuezId", "dbo.Juezs");
+            DropForeignKey("dbo.CondenaDelitoes", "CondenaID", "dbo.Condenas");
+            DropIndex("dbo.Condenas", new[] { "JuezId" });
+            DropIndex("dbo.Condenas", new[] { "PresoID" });
+            DropIndex("dbo.CondenaDelitoes", new[] { "DelitoID" });
+            DropIndex("dbo.CondenaDelitoes", new[] { "CondenaID" });
             DropTable("dbo.Delitoes");
             DropTable("dbo.Presoes");
             DropTable("dbo.Juezs");
