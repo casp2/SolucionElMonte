@@ -16,7 +16,7 @@ namespace SolucionElMonteCuatro.Models
         public Juez Jueces { get; set; }
         public List<CondenaDelito> CondenaDelitos { get; set; }
 
-        public int num { get; set; }
+        
 
         
 

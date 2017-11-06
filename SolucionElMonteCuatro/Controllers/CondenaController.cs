@@ -77,17 +77,8 @@ namespace SolucionElMonteCuatro.Controllers
             
             
             context.Condenas.Add(condena);
-            int num1 = condena.num;
-            DateTime dtt = condena.FechaCondena;
-            DateTime dti = condena.FechaInicioCondena;
-            TimeSpan ts = (dtt - dti);
-            int num2 = ts.Days;
-
-
-            CondenaDelito condenaDelito = new CondenaDelito(condena.Id, num1, num2);
             
-            
-            context.CondenaDelitos.Add(condenaDelito);
+       
          
             
             

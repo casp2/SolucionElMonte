@@ -19,12 +19,17 @@ namespace SolucionElMonteCuatro.Models
         
         public int Condena { get; set; }
 
-        
 
-        public CondenaDelito (int id_Condena)
+        public CondenaDelito() { }
+
+
+        public CondenaDelito (int id_delito, int aniosCondena)
         {
-        
+            this.DelitoID = id_delito;
+            
+            this.Condena = aniosCondena;
         }
+        
     }
 
 
