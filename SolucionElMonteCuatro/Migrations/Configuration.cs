@@ -18,6 +18,20 @@ namespace SolucionElMonteCuatro.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
+            //llenado de datos con seeders
+            context.Delitos.AddOrUpdate(c => c.Nombre,
+                new Models.Delito() { Nombre = "homicidio", CondenaMinima = 5, CondenaMaxima = 20 },
+                new Models.Delito() { Nombre = "Femicidio", CondenaMinima = 5, CondenaMaxima = 20 },
+                new Models.Delito() { Nombre = "Robo con Intimidacion", CondenaMinima = 1, CondenaMaxima = 12 },
+                new Models.Delito() { Nombre = "Robo en lugar no habitado", CondenaMinima = 1, CondenaMaxima = 5 },
+                new Models.Delito() { Nombre = "Cohecho", CondenaMinima = 5, CondenaMaxima = 5 }
+
+                );
+
+
+
+
         }
     }
 }
